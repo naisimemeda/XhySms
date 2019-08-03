@@ -1,0 +1,26 @@
+{
+    "name": "nice/xhysms",
+    "description": "A weather SDK.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nice",
+            "email": "2514430140@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nice\\XhySms\\": "./src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nice\\XhySms\\ServiceProvider"
+            ]
+        }
+    }
+}
