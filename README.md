@@ -54,12 +54,12 @@ return [
     
     public function show(XhySms $Sms) {  //腾讯云
             $Sms->send('185****4076', [
-                'template' => '6***9', 
-                'data' => [
-                    123456, 555555
-                ]
-            ],'qcloud');
-        }
+            'template' => '6***9', 
+            'data' => [
+                123456, 555555
+            ]
+        ],'qcloud');
+    }
         
 ```
 
