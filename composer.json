@@ -1,5 +1,5 @@
 {
-    "name": "Nice/xhysms",
+    "name": "nice/xhysms",
     "description": "A weather SDK.",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "nice\\xhysms\\": "./src"
+            "Nice\\XhySms\\": "./src"
         }
     },
     "require": {
