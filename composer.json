@@ -1,6 +1,6 @@
 {
-    "name": "nice/xhysms",
-    "description": "A weather SDK.",
+    "name": "nice/xhy-sms",
+    "description": "sms SDK.",
     "license": "MIT",
     "authors": [
         {
