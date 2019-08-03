@@ -1,10 +1,10 @@
 {
-    "name": "nice/xhysms",
+    "name": "Nice/xhysms",
     "description": "A weather SDK.",
     "license": "MIT",
     "authors": [
         {
-            "name": "nice",
+            "name": "NiceYo",
             "email": "2514430140@qq.com"
         }
     ],
