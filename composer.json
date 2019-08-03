@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Nice\\XhySms\\": "./src"
+            "Nice\\xhysms\\": "./src"
         }
     },
     "require": {
