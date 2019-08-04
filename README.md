@@ -9,7 +9,7 @@
 ## Installing
 
 ```shell
-$ composer require nice/xhy-sms -vvv
+$ composer require niceyo/xhy-sms -vvv
 ```
 
 ## Laravel 中使用
