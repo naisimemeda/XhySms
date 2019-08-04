@@ -12,8 +12,8 @@
 namespace Nice\XhySms\Gateways;
 
 use GuzzleHttp\Client;
-use Nice\XhySms\Traits\HasHttpRequest;
 use Nice\XhySms\Exceptions\GatewayErrorException;
+use Nice\XhySms\Traits\HasHttpRequest;
 
 /**
  * Class AliyunGateway.
@@ -55,19 +55,19 @@ class AliyunGateway
     public function send($to, $message)
     {
         $params = [
-            'RegionId' => self::ENDPOINT_REGION_ID,
-            'AccessKeyId' => $this->config['access_key_id'],
-            'Format' => self::ENDPOINT_FORMAT,
-            'SignatureMethod' => self::ENDPOINT_SIGNATURE_METHOD,
+            'RegionId'         => self::ENDPOINT_REGION_ID,
+            'AccessKeyId'      => $this->config['access_key_id'],
+            'Format'           => self::ENDPOINT_FORMAT,
+            'SignatureMethod'  => self::ENDPOINT_SIGNATURE_METHOD,
             'SignatureVersion' => self::ENDPOINT_SIGNATURE_VERSION,
-            'SignatureNonce' => uniqid(),
-            'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
-            'Action' => self::ENDPOINT_METHOD,
-            'Version' => self::ENDPOINT_VERSION,
-            'PhoneNumbers' => !\is_null($to) ? strval($to) : $to,
-            'SignName' => $this->config['sign_name'],
-            'TemplateCode' => $message['template'],
-            'TemplateParam' => json_encode($message['data'], JSON_FORCE_OBJECT),
+            'SignatureNonce'   => uniqid(),
+            'Timestamp'        => gmdate('Y-m-d\TH:i:s\Z'),
+            'Action'           => self::ENDPOINT_METHOD,
+            'Version'          => self::ENDPOINT_VERSION,
+            'PhoneNumbers'     => !\is_null($to) ? strval($to) : $to,
+            'SignName'         => $this->config['sign_name'],
+            'TemplateCode'     => $message['template'],
+            'TemplateParam'    => json_encode($message['data'], JSON_FORCE_OBJECT),
         ];
         $params['Signature'] = $this->generateSign($params);
 
@@ -100,7 +100,7 @@ class AliyunGateway
     {
         $options = [
             'base_uri' => method_exists($this, 'getBaseUri') ? $this->getBaseUri() : '',
-            'timeout' => method_exists($this, 'getTimeout') ? $this->getTimeout() : 5.0,
+            'timeout'  => method_exists($this, 'getTimeout') ? $this->getTimeout() : 5.0,
         ];
 
         return $options;

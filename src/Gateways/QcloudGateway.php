@@ -44,11 +44,11 @@ class QcloudGateway
         $params = [
             'tel' => [
                 'nationcode' => 86,
-                'mobile' => $to,
+                'mobile'     => $to,
             ],
-            'time' => time(),
+            'time'   => time(),
             'extend' => '',
-            'ext' => '',
+            'ext'    => '',
             'params' => $message['data'],
             'tpl_id' => $message['template'],
         ];
@@ -60,7 +60,7 @@ class QcloudGateway
 
         $result = $this->request('post', $url, [
             'headers' => ['Accept' => 'application/json'],
-            'json' => $params,
+            'json'    => $params,
         ]);
 
         if (0 != $result['result']) {
