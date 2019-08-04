@@ -1,16 +1,15 @@
 <?php
 
 /*
- * This file is part of the overtrue/easy-sms.
+ * This file is part of the niceyo/xhy-sms.
  *
- * (c) overtrue <i@overtrue.me>
+ * (c) nice<i@2514430140@qq.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
 namespace Nice\XhySms\Gateways;
-
 
 use GuzzleHttp\Client;
 use Nice\XhySms\Traits\HasHttpRequest;
@@ -53,7 +52,8 @@ class AliyunGateway
         return new Client($options);
     }
 
-    public function send($to, $message){
+    public function send($to, $message)
+    {
         $params = [
             'RegionId' => self::ENDPOINT_REGION_ID,
             'AccessKeyId' => $this->config['access_key_id'],
@@ -76,8 +76,10 @@ class AliyunGateway
         if ('OK' != $result['Code']) {
             throw new GatewayErrorException($result['Message'], $result['Code'], $result);
         }
+
         return $result;
     }
+
     /**
      * Generate Sign.
      *
@@ -90,6 +92,7 @@ class AliyunGateway
         ksort($params);
         $accessKeySecret = $this->config['access_key_secret'];
         $stringToSign = 'GET&%2F&'.urlencode(http_build_query($params, null, '&', PHP_QUERY_RFC3986));
+
         return base64_encode(hash_hmac('sha1', $stringToSign, $accessKeySecret.'&', true));
     }
 
