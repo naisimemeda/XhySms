@@ -3,6 +3,9 @@
 <p align="center"> 基于 <a hrer='https://www.aliyun.com/product/sms?spm=5176.12825654.eofdhaal5.17.3dbd2c4aXWqet5'>Aliyun</a> or <a hrer='https://console.cloud.tencent.com/sms'>Qcloud</a> 的 PHP 短信发送扩展。</p>
 
 
+[![Build Status](https://travis-ci.org/naisimemeda/XhySms.svg?branch=master)](https://travis-ci.org/naisimemeda/XhySms)
+![StyleCI build status](https://github.styleci.io/repos/200391657/shield) 
+
 ## Installing
 
 ```shell
